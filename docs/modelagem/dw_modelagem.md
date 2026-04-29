@@ -131,3 +131,7 @@ CREATE TABLE fato_matricula (
     valor_medio_curso DECIMAL(10,2)
 );
 ```
+
+## Próximos Passos (Camada Semântica)
+
+Este Star Schema físico servirá como base para a criação da **Camada Semântica**. Ao final do projeto (Milestone 6), as tabelas acima não serão consultadas diretamente pelo time de negócio, mas sim através de **Views Analíticas SQL** criadas no banco de dados. Essas Views abstrairão as complexidades de JOINs e agregarão os indicadores chave (KPIs) exigidos no Mini-Case.

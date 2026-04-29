@@ -9,18 +9,19 @@
 
 ## 1. Sumário Executivo
 
-### 1.1 Problema
+### 1.1 O Desafio de Negócio (Mini-Case)
 
-Uma escola precisa controlar alunos, cursos, matrículas e pagamentos de forma organizada. Atualmente não existe uma estrutura de dados que suporte tanto as operações do dia-a-dia quanto análises gerenciais sobre o desempenho das matrículas.
+A Diretoria de uma escola precisa acompanhar a saúde financeira e o engajamento dos alunos de forma ágil, respondendo a perguntas vitais como: a evolução da receita mensal, o ticket médio por curso e a taxa de evasão (status de matrículas). 
+Atualmente, os dados estão presos em tabelas operacionais puras, impossibilitando análises rápidas e consistentes por parte da gestão executiva.
 
 ### 1.2 Solução Proposta
 
-Criar uma arquitetura de dados em **duas camadas** dentro de um único banco PostgreSQL:
+Desenvolver uma **arquitetura de dados end-to-end** dentro de um único banco PostgreSQL, que não apenas sustente a operação, mas entregue valor analítico imediato na ponta. O fluxo proposto é:
 
-- **Camada OLTP (2NF)** — banco operacional para gestão transacional
-- **Camada DW / Data Mart (Star Schema)** — estrutura analítica para KPIs e relatórios
-
-Com um **ETL em Python/SQLAlchemy** conectando as duas camadas.
+- **Camada OLTP (2NF)** — banco operacional simulando a operação diária.
+- **Pipeline ETL (Python/SQLAlchemy)** — movimenta e transforma os dados.
+- **Camada DW / Data Mart (Star Schema)** — estrutura analítica robusta baseada na metodologia de Kimball.
+- **Camada Semântica (Views Analíticas)** — *data products* finais em SQL (ex: `vw_receita_mensal`) prontos para consumo por ferramentas de BI, respondendo diretamente às perguntas da Diretoria.
 
 ### 1.3 Critérios de Sucesso
 
@@ -63,7 +64,7 @@ Com um **ETL em Python/SQLAlchemy** conectando as duas camadas.
 
 ### 2.3 Non-Goals (Fora do Escopo)
 
-- ❌ Dashboard ou frontend de visualização
+- ❌ Dashboard ou frontend de visualização (Foco 100% em Engenharia/Arquitetura de Dados, entregando Views Analíticas no banco)
 - ❌ API REST
 - ❌ Autenticação de usuários
 - ❌ Segunda tabela fato (`fato_pagamento`) — versão futura
@@ -372,6 +373,7 @@ A 2NF foi escolhida como equilíbrio entre organização e simplicidade:
 | **Fase 4 — DW** | Implementar modelos SQLAlchemy do Star Schema | Modelos em `models/dw/`, schema criado |
 | **Fase 5 — ETL** | Pipeline Python (Extract → Pydantic Transform → Load) | Script em `etl/load_fato_matricula.py` |
 | **Fase 6 — Seed & Validação** | Popular OLTP com dados sintéticos (Faker) e validar ETL | Script `seed_data.py`, queries de validação |
+| **Fase 7 — Camada Semântica** | Criar Views Analíticas em SQL para responder às perguntas de negócio | Scripts SQL na pasta `docs/kpis/` |
 
 ### 5.2 Riscos Técnicos
 
