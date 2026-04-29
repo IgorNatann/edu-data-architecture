@@ -17,7 +17,8 @@ Construir uma arquitetura em duas camadas dentro do PostgreSQL:
 - **ORM**: SQLAlchemy
 - **Validação de Dados**: Pydantic
 - **Geração de Dados Sintéticos**: Faker
-- **Gerenciamento de Ambiente**: python-dotenv
+- **Gerenciamento de Dependências e Ambiente**: Poetry
+- **Variáveis de Ambiente**: python-dotenv
 
 ## 📂 Estrutura do Projeto
 
