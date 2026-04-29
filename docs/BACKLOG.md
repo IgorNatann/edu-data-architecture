@@ -102,5 +102,6 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 ## 🚀 Fluxo de Trabalho (Como usar)
 1. **Escolha uma Issue** do Milestone atual.
 2. **Execute o código** correspondente.
-3. **Marque com um `[x]`** quando concluído e testado.
-4. Avance para a próxima!
+3. **Marque com um `[x]`** no Backlog quando concluído e testado.
+4. **Atualize o `GEMINI.md`**: Sempre edite a seção "Status Atual do Projeto" no arquivo `GEMINI.md` para refletir a Issue finalizada e qual é o novo Próximo Passo.
+5. Avance para a próxima Issue!

@@ -268,3 +268,16 @@ CREATE TABLE pagamento (
     FOREIGN KEY (id_matricula) REFERENCES matricula(id_matricula)
 );
 ```
+
+---
+
+## Status Atual do Projeto (Acompanhamento de Contexto)
+
+> **⚠️ Atenção IA:** Sempre leia esta seção ao iniciar uma nova sessão e atualize-a ao finalizar uma entrega relevante. Isso garante a continuidade do desenvolvimento.
+
+- **Fase Atual:** Milestone 2 - Banco de Dados Operacional (OLTP)
+- **Última Ação Realizada:** Pivotamos o domínio do projeto para a área educacional. Refatoramos toda a documentação base (`README.md`, `docs/PRD.md`, `docs/BACKLOG.md` e este `GEMINI.md`), definindo as arquiteturas OLTP e DW.
+- **O que está em aberto (Próximo Passo):** 
+  - [ ] **Issue #1 (Milestone 2):** Configuração Base do SQLAlchemy em `config/database.py`.
+  - [ ] **Issue #2 (Milestone 2):** Criação dos Modelos OLTP na pasta `models/oltp/`.
+- **Aviso:** O gerenciamento do ambiente e dependências é feito via **Poetry**.
