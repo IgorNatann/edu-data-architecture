@@ -275,7 +275,7 @@ A 2NF foi escolhida como equilíbrio entre organização e simplicidade:
 |---|---|
 | `dim_tempo` como dimensão separada | Permite análises temporais ricas (mês, trimestre, dia da semana) sem cálculos em runtime |
 | `dim_status` como dimensão | Evita strings repetidas na fato; permite futuras expansões (descrições, agrupamentos) |
-| Surrogate keys (SK) nas dimensões | Desacopla o DW do OLTP; permite versionamento futuro (SCD) |
+| Surrogate keys (SK) nas dimensões | Desacopla o DW do OLTP e prepara a arquitetura para **SCD Tipo 2**, permitindo manter o histórico de alterações (ex: mudança no preço de um curso) inserindo novas SKs sem apagar o passado. |
 | Métricas na `fato_matricula` | `valor_total`, `qtd_cursos` pré-calculados para performance |
 
 ---

@@ -13,6 +13,7 @@ A Diretoria de uma rede educacional está enfrentando dificuldades para acompanh
 Para resolver este problema, este projeto constrói uma **Arquitetura de Dados de ponta a ponta**, saindo do dado transacional bruto até a disponibilização de uma Camada Semântica pronta para o consumo da Diretoria (via ferramentas de BI).
 
 O fluxo técnico construído (dentro do PostgreSQL) consiste em:
+
 1. **Camada Operacional (OLTP em 2NF)**: Simula o sistema base, gerenciando o dia-a-dia transacional. Conta com um script de **Seed (Faker)** para gerar massa de dados sintéticos realista.
 2. **Pipeline ETL**: Processo em Python que extrai dados do OLTP, aplica validações/transformações (via Pydantic) e carrega os resultados no DW.
 3. **Camada Analítica (DW em Star Schema - Metodologia Kimball)**: Estrutura dimensional projetada para consolidar os dados (Tabela Fato e Dimensões).
@@ -21,7 +22,7 @@ O fluxo técnico construído (dentro do PostgreSQL) consiste em:
 ## 🛠 Stack Tecnológico
 
 - **Banco de Dados**: PostgreSQL (Schemas lógicos separados)
-- **Linguagem Principal**: Python 3
+- **Linguagem Principal**: Python 3.12+
 - **ORM**: SQLAlchemy
 - **Validação de Dados**: Pydantic
 - **Geração de Dados Sintéticos**: Faker
@@ -42,17 +43,20 @@ O planejamento e a arquitetura do projeto estão inteiramente documentados. Para
 Se quiser rodar o projeto localmente e acompanhar a evolução:
 
 1. Clone o repositório:
+
    ```bash
    git clone <url-do-repositorio>
    cd edu-data-architecture
    ```
 
 2. Instale as dependências usando o [Poetry](https://python-poetry.org/):
+
    ```bash
    poetry install
    ```
 
 3. Ative o ambiente virtual do Poetry:
+
    ```bash
    poetry shell
    ```
