@@ -1,14 +1,22 @@
 # Modelagem e Arquitetura de Dados Educacional
 
-Este projeto tem como objetivo criar uma arquitetura de dados completa para um sistema de gestão educacional (escola/cursos). O foco principal é demonstrar na prática a modelagem e transformação de processos educacionais em uma estrutura de banco de dados robusta, separando a carga operacional (OLTP) da carga analítica (DW).
+## 🎯 O Desafio de Negócio (Mini-Case)
 
-## 🚀 Objetivo do Projeto
+A Diretoria de uma rede educacional está enfrentando dificuldades para acompanhar a saúde financeira e o engajamento dos alunos. Eles possuem dados transacionais brutos de alunos, matrículas e cursos, mas precisam responder de forma rápida e confiável a três perguntas vitais:
 
-Construir uma arquitetura em duas camadas dentro do PostgreSQL:
-1. **Camada Operacional (OLTP em 2NF)**: Responsável por gerenciar o dia-a-dia transacional (Alunos, Cursos, Matrículas, Pagamentos).
-2. **Camada Analítica (DW em Star Schema - Metodologia Kimball)**: Estrutura dimensional projetada para consultas rápidas, KPIs e relatórios gerenciais (Tabela Fato e Dimensões).
-3. **Pipeline ETL**: Script que extrai dados do OLTP, aplica validações e transformações (via Pydantic) e carrega os resultados no DW.
-4. **Seed de Dados**: Script que gera massa de dados sintéticos realistas utilizando a biblioteca Faker.
+1. **Evolução da Receita:** Qual é o valor total de matrículas geradas mês a mês?
+2. **Ticket Médio:** Quais cursos geram o maior ticket médio e receita absoluta?
+3. **Funil de Evasão:** Qual é a distribuição do status das matrículas (Ativas vs. Trancadas/Concluídas)?
+
+## 🚀 A Solução e Objetivo do Projeto
+
+Para resolver este problema, este projeto constrói uma **Arquitetura de Dados de ponta a ponta**, saindo do dado transacional bruto até a disponibilização de uma Camada Semântica pronta para o consumo da Diretoria (via ferramentas de BI).
+
+O fluxo técnico construído (dentro do PostgreSQL) consiste em:
+1. **Camada Operacional (OLTP em 2NF)**: Simula o sistema base, gerenciando o dia-a-dia transacional. Conta com um script de **Seed (Faker)** para gerar massa de dados sintéticos realista.
+2. **Pipeline ETL**: Processo em Python que extrai dados do OLTP, aplica validações/transformações (via Pydantic) e carrega os resultados no DW.
+3. **Camada Analítica (DW em Star Schema - Metodologia Kimball)**: Estrutura dimensional projetada para consolidar os dados (Tabela Fato e Dimensões).
+4. **Camada Semântica (Views Analíticas)**: O produto final do projeto. Views em SQL que abstraem a complexidade do Star Schema, servindo os KPIs mastigados para responder diretamente às 3 perguntas de negócio da Diretoria.
 
 ## 🛠 Stack Tecnológico
 

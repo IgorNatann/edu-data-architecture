@@ -11,6 +11,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 - [ ] **Milestone 3**: Banco de Dados Analítico (DW)
 - [ ] **Milestone 4**: Schemas de Validação e Transformação (Pydantic)
 - [ ] **Milestone 5**: Geração de Dados (Seed) e Pipeline ETL
+- [ ] **Milestone 6**: Disponibilização de Dados (Camada Semântica)
 
 ---
 
@@ -96,6 +97,15 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 - [ ] **Issue #10: Validação Analítica**
   - Rodar consultas SQL básicas contra as tabelas do `dw` para garantir a corretude dos dados inseridos pelo ETL.
   - Documentar algumas *queries* úteis (ex: receita por mês).
+
+---
+
+### Milestone 6: Disponibilização de Dados (Camada Semântica)
+*Foco: Encapsular a complexidade do DW em Views analíticas prontas para o consumo do negócio, respondendo diretamente ao Mini-Case.*
+
+- [ ] **Issue #11: Criar Views Analíticas (KPIs)**
+  - Na pasta `docs/kpis/`, armazenar os scripts SQL (`receita_mensal.sql`, `desempenho_cursos.sql`, `funil_evasao.sql`).
+  - Executar a criação das `CREATE VIEW vw_...` no schema `dw` para entregar o dado mastigado (Camada Semântica).
 
 ---
 

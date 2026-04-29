@@ -10,15 +10,14 @@ O foco principal é aprender a transformar processos educacionais em uma estrutu
 
 ## Objetivo do Projeto
 
-Criar um modelo de dados iniciante contendo:
+Criar uma arquitetura de dados end-to-end (focada em resolver um Mini-Case de negócio da Diretoria) contendo:
 
-- Entendimento do problema (Gestão Escolar/Cursos)
-- Identificação das entidades principais
-- Criação do modelo conceitual
-- Criação do modelo lógico
-- Criação do modelo físico
-- Escrita dos comandos SQL básicos
-- Documentação das tabelas e relacionamentos
+- Entendimento do problema de negócio (Receita, Ticket Médio e Evasão)
+- Criação da Camada Operacional (OLTP em 2NF) simulando o transacional
+- Geração de dados sintéticos realistas (Seed via Faker)
+- Pipeline ETL (Python + Pydantic para validação)
+- Criação da Camada Analítica (DW em Star Schema - Kimball)
+- Criação da Camada Semântica (Views Analíticas em SQL) para entregar o dado pronto para consumo de BI
 
 ---
 
@@ -276,7 +275,7 @@ CREATE TABLE pagamento (
 > **⚠️ Atenção IA:** Sempre leia esta seção ao iniciar uma nova sessão e atualize-a ao finalizar uma entrega relevante. Isso garante a continuidade do desenvolvimento.
 
 - **Fase Atual:** Milestone 2 - Banco de Dados Operacional (OLTP)
-- **Última Ação Realizada:** Pivotamos o domínio do projeto para a área educacional. Refatoramos toda a documentação base (`README.md`, `docs/PRD.md`, `docs/BACKLOG.md` e este `GEMINI.md`), definindo as arquiteturas OLTP e DW.
+- **Última Ação Realizada:** Reestruturamos a documentação e narrativa do projeto para focar no "Mini-Case de Negócio", definindo que todo o fluxo arquitetural culminará em uma Camada Semântica (Views Analíticas prontas para consumo de BI). A Fase 1 (Planejamento e Modelagem) está 100% concluída.
 - **O que está em aberto (Próximo Passo):** 
   - [ ] **Issue #1 (Milestone 2):** Configuração Base do SQLAlchemy em `config/database.py`.
   - [ ] **Issue #2 (Milestone 2):** Criação dos Modelos OLTP na pasta `models/oltp/`.
