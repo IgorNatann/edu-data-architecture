@@ -149,7 +149,8 @@ projeto/
 │   └── modelagem/
 │       ├── oltp_modelagem.md  # Documentação da modelagem OLTP
 │       └── dw_modelagem.md    # Documentação da modelagem DW
-├── requirements.txt
+├── pyproject.toml
+├── poetry.lock
 └── GEMINI.md
 ```
 
