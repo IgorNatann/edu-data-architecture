@@ -7,7 +7,8 @@ Este documento detalha a modelagem da camada analítica (DW) do sistema. O model
 - **Processo de Negócio:** Foco no evento central do negócio (o ato da matrícula), modelando as dimensões ao redor desse evento.
 - **Simplicidade de Consulta:** Evita "cascatas" de JOINs complexos presentes na 2NF; a tabela Fato e as Dimensões têm relação direta (Star Schema).
 - **Performance:** Otimizado para cálculos agregados e `GROUP BY` nas ferramentas de relatórios/BI.
-- **Isolamento via Surrogate Keys (SK):** O uso de Surrogate Keys permite absorver mudanças e realizar versionamento histórico (SCD) de forma independente das chaves primárias (Natural Keys) da camada OLTP, o que é uma das principais premissas de Kimball.
+- **Isolamento via Surrogate Keys (SK):** O uso de chaves artificiais (SK) separa a identificação analítica da identificação operacional (Natural Keys).
+- **Suporte a SCD Tipo 2 (Slowly Changing Dimensions):** A arquitetura de SKs deixa o DW nativamente preparado para rastreamento de histórico (uma exigência da metodologia Kimball). Se um curso sofrer alteração de preço, por exemplo, nós não faremos um `UPDATE` destrutivo apagando o valor antigo. Inseriremos uma nova linha na `dim_curso` com o novo preço, gerando uma nova `sk_curso` (mantendo a mesma `nk_curso`). Matrículas antigas continuarão apontando para a `sk` antiga, garantindo a integridade dos relatórios financeiros do passado.
 
 ## Modelo Conceitual
 
@@ -30,6 +31,7 @@ Este documento detalha a modelagem da camada analítica (DW) do sistema. O model
 ## Modelo Lógico
 
 ### dim_aluno
+
 | Campo | Tipo | Chave | Descrição |
 |---|---|---|---|
 | sk_aluno | INTEGER | PK | Surrogate key |
@@ -40,6 +42,7 @@ Este documento detalha a modelagem da camada analítica (DW) do sistema. O model
 | data_carga | TIMESTAMP | — | Data/hora da carga ETL |
 
 ### dim_curso
+
 | Campo | Tipo | Chave | Descrição |
 |---|---|---|---|
 | sk_curso | INTEGER | PK | Surrogate key |
@@ -50,6 +53,7 @@ Este documento detalha a modelagem da camada analítica (DW) do sistema. O model
 | data_carga | TIMESTAMP | — | Data/hora da carga ETL |
 
 ### dim_tempo
+
 | Campo | Tipo | Chave | Descrição |
 |---|---|---|---|
 | sk_tempo | INTEGER | PK | Surrogate key |
@@ -62,6 +66,7 @@ Este documento detalha a modelagem da camada analítica (DW) do sistema. O model
 | dia_semana | VARCHAR(20) | — | Dia da semana (Segunda, Terça...) |
 
 ### dim_status
+
 | Campo | Tipo | Chave | Descrição |
 |---|---|---|---|
 | sk_status | INTEGER | PK | Surrogate key |
@@ -69,6 +74,7 @@ Este documento detalha a modelagem da camada analítica (DW) do sistema. O model
 | descricao_status | VARCHAR(100) | — | Descrição longa do status |
 
 ### fato_matricula
+
 | Campo | Tipo | Chave | Descrição |
 |---|---|---|---|
 | sk_matricula | INTEGER | PK | Surrogate key da fato |
