@@ -1,12 +1,13 @@
 # Modelagem de Dados Analítica (Data Warehouse)
 
-Este documento detalha a modelagem da camada analítica (DW) do sistema. O modelo foi desenvolvido em um **Star Schema** (Modelo Dimensional), ideal para agregação rápida, relatórios e extração de KPIs.
+Este documento detalha a modelagem da camada analítica (DW) do sistema. O modelo foi construído utilizando a **Modelagem Dimensional baseada na metodologia de Ralph Kimball**. A estrutura escolhida é o **Star Schema**, ideal para agregação rápida, relatórios e extração de KPIs.
 
-## Raciocínio (Por que Star Schema?)
+## Raciocínio (Abordagem Kimball)
 
-- **Simplicidade de Consulta:** Evita "cascatas" de JOINs complexos presentes na 2NF; a tabela Fato e as Dimensões têm relação direta.
-- **Performance:** Otimizado para cálculos agregados e group by nas ferramentas de relatórios/BI.
-- **Isolamento via Surrogate Keys (SK):** As Surrogate Keys permitem mudanças e versionamento sem depender estritamente dos IDs (Natural Keys) da camada OLTP.
+- **Processo de Negócio:** Foco no evento central do negócio (o ato da matrícula), modelando as dimensões ao redor desse evento.
+- **Simplicidade de Consulta:** Evita "cascatas" de JOINs complexos presentes na 2NF; a tabela Fato e as Dimensões têm relação direta (Star Schema).
+- **Performance:** Otimizado para cálculos agregados e `GROUP BY` nas ferramentas de relatórios/BI.
+- **Isolamento via Surrogate Keys (SK):** O uso de Surrogate Keys permite absorver mudanças e realizar versionamento histórico (SCD) de forma independente das chaves primárias (Natural Keys) da camada OLTP, o que é uma das principais premissas de Kimball.
 
 ## Modelo Conceitual
 

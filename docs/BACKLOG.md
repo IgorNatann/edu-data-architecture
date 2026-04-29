@@ -41,7 +41,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 ---
 
 ### Milestone 3: Banco de Dados Analítico (DW)
-*Foco: Estabelecer a estrutura Star Schema para análises e KPIs.*
+*Foco: Estabelecer a estrutura Star Schema (Modelagem Kimball) para análises e KPIs.*
 
 - [ ] **Issue #4: Implementar Modelos DW (Star Schema)**
   - Criar os modelos em `models/dw/`:

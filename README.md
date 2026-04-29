@@ -6,7 +6,7 @@ Este projeto tem como objetivo criar uma arquitetura de dados completa para um s
 
 Construir uma arquitetura em duas camadas dentro do PostgreSQL:
 1. **Camada Operacional (OLTP em 2NF)**: Responsável por gerenciar o dia-a-dia transacional (Alunos, Cursos, Matrículas, Pagamentos).
-2. **Camada Analítica (DW em Star Schema)**: Estrutura dimensional projetada para consultas rápidas, KPIs e relatórios gerenciais (Tabela Fato e Dimensões).
+2. **Camada Analítica (DW em Star Schema - Metodologia Kimball)**: Estrutura dimensional projetada para consultas rápidas, KPIs e relatórios gerenciais (Tabela Fato e Dimensões).
 3. **Pipeline ETL**: Script que extrai dados do OLTP, aplica validações e transformações (via Pydantic) e carrega os resultados no DW.
 4. **Seed de Dados**: Script que gera massa de dados sintéticos realistas utilizando a biblioteca Faker.
 
