@@ -20,7 +20,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 ### Milestone 2: Banco de Dados Operacional (OLTP)
 *Foco: Estabelecer a base transacional 2NF da escola.*
 
-- [ ] **Issue #1: Configuração Base do SQLAlchemy**
+- [x] **Issue #1: Configuração Base do SQLAlchemy**
   - Configurar `config/database.py`.
   - Criar base declarativa e configurar URL de conexão com o PostgreSQL do Render usando variáveis de ambiente.
   - Implementar sessão do banco.
