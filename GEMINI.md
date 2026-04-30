@@ -275,7 +275,7 @@ CREATE TABLE pagamento (
 > **⚠️ Atenção IA:** Sempre leia esta seção ao iniciar uma nova sessão e atualize-a ao finalizar uma entrega relevante. Isso garante a continuidade do desenvolvimento.
 
 - **Fase Atual:** Milestone 2 - Banco de Dados Operacional (OLTP)
-- **Última Ação Realizada:** Reestruturamos a documentação e narrativa do projeto para focar no "Mini-Case de Negócio", definindo que todo o fluxo arquitetural culminará em uma Camada Semântica (Views Analíticas prontas para consumo de BI). A Fase 1 (Planejamento e Modelagem) está 100% concluída.
+- **Última Ação Realizada:** Finalizamos a Fase 1 (Planejamento) criando a separação corporativa entre Negócios (**BRD.md**) e Engenharia (**PRD.md**). Todo o fluxo arquitetural agora é direcionado para resolver o Mini-Case da Diretoria, culminando em uma Camada Semântica (Views Analíticas).
 - **O que está em aberto (Próximo Passo):** 
   - [ ] **Issue #1 (Milestone 2):** Configuração Base do SQLAlchemy em `config/database.py`.
   - [ ] **Issue #2 (Milestone 2):** Criação dos Modelos OLTP na pasta `models/oltp/`.

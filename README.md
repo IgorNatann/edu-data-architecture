@@ -33,7 +33,8 @@ O fluxo técnico construído (dentro do PostgreSQL) consiste em:
 
 O planejamento e a arquitetura do projeto estão inteiramente documentados. Para entender como o projeto é construído, acesse os arquivos na pasta `docs/`:
 
-- **[PRD (Product Requirements Document)](docs/PRD.md)**: Visão completa do produto, regras de negócio e arquitetura detalhada.
+- **[BRD (Business Requirements Document)](docs/BRD.md)**: Levantamento dos requisitos de negócio, métricas, SLAs e o detalhamento do Mini-Case pela ótica da Diretoria.
+- **[PRD (Product Requirements Document)](docs/PRD.md)**: A tradução do BRD em requisitos técnicos, arquitetura de dados e modelagem (O "Como vamos construir").
 - **[Backlog](docs/BACKLOG.md)**: Plano de execução passo a passo dividido em Milestones e Issues.
 
 *(As pastas de código `config/`, `models/`, `schemas/`, e `etl/` estão sendo construídas de acordo com os marcos do Backlog).*
