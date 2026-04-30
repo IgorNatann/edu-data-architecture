@@ -11,6 +11,8 @@
 
 ### 1.1 O Desafio de Negócio (Mini-Case)
 
+> **Nota:** As fórmulas matemáticas, regras de qualidade e SLAs deste case estão detalhados no documento de negócios: **[BRD - Business Requirements Document](BRD.md)**.
+
 A Diretoria de uma escola precisa acompanhar a saúde financeira e o engajamento dos alunos de forma ágil, respondendo a perguntas vitais como: a evolução da receita mensal, o ticket médio por curso e a taxa de evasão (status de matrículas). 
 Atualmente, os dados estão presos em tabelas operacionais puras, impossibilitando análises rápidas e consistentes por parte da gestão executiva.
 
