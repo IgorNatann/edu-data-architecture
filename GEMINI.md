@@ -274,8 +274,8 @@ CREATE TABLE pagamento (
 
 > **⚠️ Atenção IA:** Sempre leia esta seção ao iniciar uma nova sessão e atualize-a ao finalizar uma entrega relevante. Isso garante a continuidade do desenvolvimento.
 
-- **Fase Atual:** Milestone 2 - Banco de Dados Operacional (OLTP)
-- **Última Ação Realizada:** Finalizamos a **Issue #2** (Implementação dos Modelos OLTP) com todo o mapeamento de tabelas e relacionamentos concluído.
+- **Fase Atual:** Milestone 3 - Banco de Dados Analítico (DW)
+- **Última Ação Realizada:** Finalizamos o **Milestone 2** com a criação física das tabelas operacionais no PostgreSQL do Render.
 - **O que está em aberto (Próximo Passo):**
-  - [ ] **Issue #3 (Milestone 2):** Criação das Tabelas OLTP no banco (script `create_tables.py`).
+  - [ ] **Issue #4 (Milestone 3):** Implementação dos Modelos DW (Star Schema) na pasta `models/dw/`.
 - **Aviso:** O gerenciamento do ambiente e dependências é feito via **Poetry**.

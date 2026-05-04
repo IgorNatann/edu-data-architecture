@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, Decimal, Date, func
+from sqlalchemy import Column, Integer, String, Text, Numeric, Date, func
 from sqlalchemy.orm import relationship
 from config.database import Base
 
@@ -25,7 +25,7 @@ class Curso(Base):
     
     # Valores Monetarios e Metricas
     # Decimal(10,2) eh obrigatorio para evitar erros de precisao de ponto flutuante em dados financeiros.
-    preco = Column(Decimal(10, 2), nullable=False)
+    preco = Column(Numeric(10, 2), nullable=False)
     carga_horaria = Column(Integer, nullable=False)
     
     # Auditoria

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date, Decimal, ForeignKey, func
+from sqlalchemy import Column, Integer, String, Date, Numeric, ForeignKey, func
 from sqlalchemy.orm import relationship
 from config.database import Base
 
@@ -26,7 +26,7 @@ class Matricula(Base):
     # Detalhes do Registro
     data_matricula = Column(Date, nullable=False, server_default=func.current_date())
     status = Column(String(30), default="Ativa") # Ex: Ativa, Trancada, Concluida, Cancelada
-    valor_total = Column(Decimal(10, 2), nullable=True)
+    valor_total = Column(Numeric(10, 2), nullable=True)
 
     # RELACIONAMENTOS (SQLAlchemy ORM)
     # Lado 'Many' do relacionamento com Aluno
