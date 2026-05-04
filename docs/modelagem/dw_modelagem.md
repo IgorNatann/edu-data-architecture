@@ -14,18 +14,55 @@ Este documento detalha a modelagem da camada analítica (DW) do sistema. O model
 
 **Granularidade da Fato:** 1 linha por Matrícula (Nível de Matrícula).
 
-```text
-                    ┌───────────┐
-                    │ dim_tempo  │
-                    └─────┬─────┘
-                          │
-┌───────────┐    ┌────────┴────────┐    ┌───────────┐
-│ dim_aluno  │───│ fato_matricula   │───│ dim_curso  │
-└───────────┘    └────────┬────────┘    └───────────┘
-                          │
-                    ┌─────┴─────┐
-                    │ dim_status │
-                    └───────────┘
+```mermaid
+erDiagram
+    FATO_MATRICULA }o--|| DIM_ALUNO : "sk_aluno"
+    FATO_MATRICULA }o--|| DIM_CURSO : "sk_curso"
+    FATO_MATRICULA }o--|| DIM_TEMPO : "sk_tempo"
+    FATO_MATRICULA }o--|| DIM_STATUS : "sk_status"
+
+    DIM_ALUNO {
+        int sk_aluno PK
+        int nk_aluno
+        string nome
+        string email
+        date data_nascimento
+        timestamp data_carga
+    }
+    DIM_CURSO {
+        int sk_curso PK
+        int nk_curso
+        string nome_curso
+        int carga_horaria
+        decimal preco_catalogo
+        timestamp data_carga
+    }
+    DIM_TEMPO {
+        int sk_tempo PK
+        date data_completa
+        int ano
+        int mes
+        int dia
+        int trimestre
+        string nome_mes
+        string dia_semana
+    }
+    DIM_STATUS {
+        int sk_status PK
+        string codigo_status
+        string descricao_status
+    }
+    FATO_MATRICULA {
+        int sk_matricula PK
+        int nk_matricula
+        int sk_aluno FK
+        int sk_curso FK
+        int sk_tempo FK
+        int sk_status FK
+        decimal valor_total
+        int qtd_cursos
+        decimal valor_medio_curso
+    }
 ```
 
 ## Modelo Lógico
