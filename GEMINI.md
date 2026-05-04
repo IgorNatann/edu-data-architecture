@@ -274,8 +274,8 @@ CREATE TABLE pagamento (
 
 > **⚠️ Atenção IA:** Sempre leia esta seção ao iniciar uma nova sessão e atualize-a ao finalizar uma entrega relevante. Isso garante a continuidade do desenvolvimento.
 
-- **Fase Atual:** Milestone 3 - Banco de Dados Analítico (DW)
-- **Última Ação Realizada:** Finalizamos a implementação dos modelos dimensionais (Star Schema) na pasta `models/dw/` (**Issue #4**).
+- **Fase Atual:** Milestone 4 - Schemas de Validação e Transformação (Pydantic)
+- **Última Ação Realizada:** Finalizamos a criação física das tabelas DW no PostgreSQL via script `create_tables.py` (**Issue #5**).
 - **O que está em aberto (Próximo Passo):**
-  - [ ] **Issue #5 (Milestone 3):** Atualização do script `scripts/create_tables.py` e criação física das tabelas DW no PostgreSQL.
+  - [ ] **Issue #6 (Milestone 4):** Criar Schemas de Validação OLTP em Pydantic.
 - **Aviso:** O gerenciamento do ambiente e dependências é feito via **Poetry**.

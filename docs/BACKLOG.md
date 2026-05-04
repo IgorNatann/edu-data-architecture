@@ -8,7 +8,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 
 - [x] **Milestone 1**: Planejamento e Documentação Inicial (PRD, Modelagem, Backlog)
 - [x] **Milestone 2**: Banco de Dados Operacional (OLTP)
-- [ ] **Milestone 3**: Banco de Dados Analítico (DW)
+- [x] **Milestone 3**: Banco de Dados Analítico (DW)
 - [ ] **Milestone 4**: Schemas de Validação e Transformação (Pydantic)
 - [ ] **Milestone 5**: Geração de Dados (Seed) e Pipeline ETL
 - [ ] **Milestone 6**: Disponibilização de Dados (Camada Semântica)
@@ -55,7 +55,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
     - `fato_matricula.py` (SKs e métricas como `valor_total` e `qtd_cursos`)
   - Garantir que todos usem o schema `dw` no PostgreSQL.
 
-- [ ] **Issue #5: Criação das Tabelas DW no Banco**
+- [x] **Issue #5: Criação das Tabelas DW no Banco**
   - Atualizar o script de inicialização do banco para incluir a criação do schema `dw` e suas tabelas.
 
 ---
