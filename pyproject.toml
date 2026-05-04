@@ -1,5 +1,9 @@
 [project]
 name = "edu-data-architecture"
+
+[tool.poetry]
+package-mode = false
+
 version = "0.1.0"
 description = "Projeto de arquitetura de dados educacionais com modelagem OLTP e DW e pipeline ETL em Python."
 authors = [
