@@ -18,6 +18,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 ## 📝 Issues Detalhadas (Plano de Execução)
 
 ### Milestone 2: Banco de Dados Operacional (OLTP)
+
 *Foco: Estabelecer a base transacional 2NF da escola.*
 
 - [x] **Issue #1: Configuração Base do SQLAlchemy**
@@ -42,6 +43,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 ---
 
 ### Milestone 3: Banco de Dados Analítico (DW)
+
 *Foco: Estabelecer a estrutura Star Schema (Modelagem Kimball) para análises e KPIs.*
 
 - [ ] **Issue #4: Implementar Modelos DW (Star Schema)**
@@ -59,6 +61,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 ---
 
 ### Milestone 4: Schemas de Validação e Transformação
+
 *Foco: Construir a camada de validação e transformação dos dados entre OLTP e DW usando Pydantic.*
 
 - [ ] **Issue #6: Criar Schemas de Validação OLTP**
@@ -75,6 +78,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 ---
 
 ### Milestone 5: Geração de Dados (Seed) e Pipeline ETL
+
 *Foco: Popular a base com dados realistas e movimentá-los para a camada analítica.*
 
 - [ ] **Issue #8: Script de Geração de Dados (Seed) com Faker**
@@ -101,6 +105,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 ---
 
 ### Milestone 6: Disponibilização de Dados (Camada Semântica)
+
 *Foco: Encapsular a complexidade do DW em Views analíticas prontas para o consumo do negócio, respondendo diretamente ao Mini-Case.*
 
 - [ ] **Issue #11: Criar Views Analíticas (KPIs)**
@@ -110,6 +115,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 ---
 
 ## 🚀 Fluxo de Trabalho (Como usar)
+
 1. **Escolha uma Issue** do Milestone atual.
 2. **Execute o código** correspondente.
 3. **Marque com um `[x]`** no Backlog quando concluído e testado.

@@ -275,7 +275,7 @@ CREATE TABLE pagamento (
 > **⚠️ Atenção IA:** Sempre leia esta seção ao iniciar uma nova sessão e atualize-a ao finalizar uma entrega relevante. Isso garante a continuidade do desenvolvimento.
 
 - **Fase Atual:** Milestone 2 - Banco de Dados Operacional (OLTP)
-- **Última Ação Realizada:** Finalizamos a **Issue #1**: Configuração Base do SQLAlchemy em `config/database.py`, incluindo o motor (engine), a base declarativa e a fábrica de sessões.
-- **O que está em aberto (Próximo Passo):** 
+- **Última Ação Realizada:** Finalizamos a **Issue #1** (Configuração Base) e validamos a conectividade com o PostgreSQL do Render via script de teste.
+- **O que está em aberto (Próximo Passo):**
   - [ ] **Issue #2 (Milestone 2):** Criação dos Modelos OLTP na pasta `models/oltp/`.
 - **Aviso:** O gerenciamento do ambiente e dependências é feito via **Poetry**.
