@@ -13,7 +13,7 @@
 
 > **Nota:** As fórmulas matemáticas, regras de qualidade e SLAs deste case estão detalhados no documento de negócios: **[BRD - Business Requirements Document](BRD.md)**.
 
-A Diretoria de uma escola precisa acompanhar a saúde financeira e o engajamento dos alunos de forma ágil, respondendo a perguntas vitais como: a evolução da receita mensal, o ticket médio por curso e a taxa de evasão (status de matrículas). 
+A Diretoria de uma escola precisa acompanhar a saúde financeira e o engajamento dos alunos de forma ágil, respondendo a perguntas vitais como: a evolução da receita mensal, o ticket médio por curso e a taxa de evasão (status de matrículas).
 Atualmente, os dados estão presos em tabelas operacionais puras, impossibilitando análises rápidas e consistentes por parte da gestão executiva.
 
 ### 1.2 Solução Proposta
@@ -66,12 +66,10 @@ Desenvolver uma **arquitetura de dados end-to-end** dentro de um único banco Po
 
 ### 2.3 Non-Goals (Fora do Escopo)
 
-- ❌ Dashboard ou frontend de visualização (Foco 100% em Engenharia/Arquitetura de Dados, entregando Views Analíticas no banco)
+- ❌ Dashboard ou frontend de visualização (Foco 100% em Engenharia/Arquitetura de Dados)
 - ❌ API REST
 - ❌ Autenticação de usuários
-- ❌ Segunda tabela fato (`fato_pagamento`) — versão futura
 - ❌ Migrations com Alembic
-- ❌ Testes automatizados
 
 ---
 
@@ -143,6 +141,8 @@ projeto/
 │   ├── curso_schema.py        # Validação de dados do curso
 │   ├── matricula_schema.py    # Validação de dados da matrícula
 │   └── fato_matricula_schema.py # Transformação OLTP → DW
+├── tests/                      # Validações de Infraestrutura e Qualidade
+│   └── test_database.py       # Teste de conexão e criação de schemas
 ├── etl/
 │   └── load_fato_matricula.py # Pipeline ETL OLTP → DW
 ├── scripts/
@@ -392,12 +392,14 @@ A 2NF foi escolhida como equilíbrio entre organização e simplicidade:
 > Cada frente será desenvolvida e documentada sequencialmente.
 
 ### Frente 1: Modelagem OLTP
+
 1. Documentar raciocínio da 2NF
 2. Criar modelo conceitual (entidades e relacionamentos)
 3. Criar modelo lógico (tabelas, tipos, chaves)
 4. Criar modelo físico (DDL SQL para PostgreSQL)
 
 ### Frente 2: Modelagem DW
+
 1. Documentar raciocínio do Star Schema
 2. Definir granularidade da tabela fato
 3. Criar modelo conceitual (fato + dimensões)
@@ -405,20 +407,24 @@ A 2NF foi escolhida como equilíbrio entre organização e simplicidade:
 5. Criar modelo físico (DDL SQL para PostgreSQL)
 
 ### Frente 3: Implementação OLTP
+
 1. Configurar conexão PostgreSQL (database.py)
 2. Implementar modelos SQLAlchemy para schema `oltp`
 3. Criar tabelas no banco
 
 ### Frente 4: Implementação DW
+
 1. Implementar modelos SQLAlchemy para schema `dw`
 2. Criar tabelas no banco
 
 ### Frente 5: Schemas Pydantic
+
 1. Criar schemas de validação para entidades OLTP (aluno, curso, matrícula)
 2. Criar schema de transformação para `fato_matricula` (com `@computed_field` e `@field_validator`)
 3. Documentar regras de validação e transformação
 
 ### Frente 6: ETL + Seed
+
 1. Criar script de seed usando Faker para popular OLTP com dados realistas
 2. Implementar pipeline ETL: Extract (SQLAlchemy) → Transform (Pydantic) → Load (SQLAlchemy)
 3. Validar dados no DW com queries analíticas

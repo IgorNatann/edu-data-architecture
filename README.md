@@ -37,7 +37,7 @@ O planejamento e a arquitetura do projeto estão inteiramente documentados. Para
 - **[PRD (Product Requirements Document)](docs/PRD.md)**: A tradução do BRD em requisitos técnicos, arquitetura de dados e modelagem (O "Como vamos construir").
 - **[Backlog](docs/BACKLOG.md)**: Plano de execução passo a passo dividido em Milestones e Issues.
 
-*(As pastas de código `config/`, `models/`, `schemas/`, e `etl/` estão sendo construídas de acordo com os marcos do Backlog).*
+*(As pastas de código `config/`, `models/`, `schemas/`, `tests/` e `etl/` estão sendo construídas de acordo com os marcos do Backlog).*
 
 ## 🚦 Como Iniciar
 
@@ -62,4 +62,12 @@ Se quiser rodar o projeto localmente e acompanhar a evolução:
    poetry shell
    ```
 
-4. Acompanhe a evolução e as próximas etapas lendo o arquivo `docs/BACKLOG.md`.
+4. Configure seu arquivo `.env` baseado no `.env.example`.
+
+5. Valide a conexão com o banco de dados e a infraestrutura de schemas:
+
+   ```bash
+   poetry run python tests/test_database.py
+   ```
+
+6. Acompanhe a evolução e as próximas etapas lendo o arquivo `docs/BACKLOG.md`.
