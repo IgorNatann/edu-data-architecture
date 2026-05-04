@@ -6,15 +6,16 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from config.database import engine, Base
 from models.oltp import Aluno, Curso, Matricula, ItemMatricula, Pagamento
+from models.dw import DimAluno, DimCurso, DimStatus, DimTempo, FatoMatricula
 
 def create_tables():
     print("\n--- [INIT] Iniciando a criacao das tabelas no banco de dados ---")
     
     try:
-        # Tenta criar as tabelas
+        # Tenta criar as tabelas (o SQLAlchemy usara os schemas definidos nos modelos)
         Base.metadata.create_all(bind=engine)
         
-        print("SUCESSO: Tabelas do schema 'oltp' criadas/verificadas com sucesso!")
+        print("SUCESSO: Tabelas dos schemas 'oltp' e 'dw' criadas/verificadas com sucesso!")
         print("\nTabelas processadas:")
         for table_name in Base.metadata.tables.keys():
             print(f" - {table_name}")

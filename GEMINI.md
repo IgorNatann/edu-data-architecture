@@ -275,7 +275,7 @@ CREATE TABLE pagamento (
 > **⚠️ Atenção IA:** Sempre leia esta seção ao iniciar uma nova sessão e atualize-a ao finalizar uma entrega relevante. Isso garante a continuidade do desenvolvimento.
 
 - **Fase Atual:** Milestone 3 - Banco de Dados Analítico (DW)
-- **Última Ação Realizada:** Finalizamos o **Milestone 2** com a criação física das tabelas operacionais no PostgreSQL do Render.
+- **Última Ação Realizada:** Finalizamos a implementação dos modelos dimensionais (Star Schema) na pasta `models/dw/` (**Issue #4**).
 - **O que está em aberto (Próximo Passo):**
-  - [ ] **Issue #4 (Milestone 3):** Implementação dos Modelos DW (Star Schema) na pasta `models/dw/`.
+  - [ ] **Issue #5 (Milestone 3):** Atualização do script `scripts/create_tables.py` e criação física das tabelas DW no PostgreSQL.
 - **Aviso:** O gerenciamento do ambiente e dependências é feito via **Poetry**.

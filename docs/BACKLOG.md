@@ -46,7 +46,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 
 *Foco: Estabelecer a estrutura Star Schema (Modelagem Kimball) para análises e KPIs.*
 
-- [ ] **Issue #4: Implementar Modelos DW (Star Schema)**
+- [x] **Issue #4: Implementar Modelos DW (Star Schema)**
   - Criar os modelos em `models/dw/`:
     - `dim_aluno.py` (SK, NK, campos descritivos)
     - `dim_curso.py` (SK, NK, campos descritivos)
