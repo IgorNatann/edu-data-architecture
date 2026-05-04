@@ -26,7 +26,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
   - Criar base declarativa e configurar URL de conexão com o PostgreSQL do Render usando variáveis de ambiente.
   - Implementar sessão do banco.
 
-- [ ] **Issue #2: Implementar Modelos OLTP**
+- [x] **Issue #2: Implementar Modelos OLTP**
   - Criar os modelos em `models/oltp/`:
     - `aluno.py`
     - `curso.py`
