@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date, Decimal, ForeignKey, func
+from sqlalchemy import Column, Integer, String, Date, Numeric, ForeignKey, func
 from sqlalchemy.orm import relationship
 from config.database import Base
 
@@ -24,7 +24,7 @@ class Pagamento(Base):
     
     # Detalhes Financeiros
     forma_pagamento = Column(String(50), nullable=True) # Ex: Cartao, Boleto, PIX
-    valor_pago = Column(Decimal(10, 2), nullable=True)
+    valor_pago = Column(Numeric(10, 2), nullable=True)
     data_pagamento = Column(Date, nullable=True)
     status_pagamento = Column(String(30), default="Pendente") # Ex: Pendente, Pago, Estornado
 

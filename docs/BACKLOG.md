@@ -7,7 +7,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 ## 📌 Visão Geral das Entregas (Milestones)
 
 - [x] **Milestone 1**: Planejamento e Documentação Inicial (PRD, Modelagem, Backlog)
-- [ ] **Milestone 2**: Banco de Dados Operacional (OLTP)
+- [x] **Milestone 2**: Banco de Dados Operacional (OLTP)
 - [ ] **Milestone 3**: Banco de Dados Analítico (DW)
 - [ ] **Milestone 4**: Schemas de Validação e Transformação (Pydantic)
 - [ ] **Milestone 5**: Geração de Dados (Seed) e Pipeline ETL
@@ -36,7 +36,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
   - Garantir que todos usem o schema `oltp` no PostgreSQL.
   - Configurar as *Foreign Keys* e relacionamentos (*relationships* do SQLAlchemy).
 
-- [ ] **Issue #3: Criação das Tabelas OLTP no Banco**
+- [x] **Issue #3: Criação das Tabelas OLTP no Banco**
   - Criar um script para inicializar o banco de dados e as tabelas operacionais.
   - Testar a criação executando contra o banco no Render.
 

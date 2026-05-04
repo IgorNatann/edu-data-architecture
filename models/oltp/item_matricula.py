@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, Date, Decimal, ForeignKey
+from sqlalchemy import Column, Integer, Date, Numeric, ForeignKey
 from sqlalchemy.orm import relationship
 from config.database import Base
 
@@ -26,7 +26,7 @@ class ItemMatricula(Base):
     id_curso = Column(Integer, ForeignKey("oltp.curso.id_curso"), nullable=False)
     
     # Historico e Logistica
-    preco_momento = Column(Decimal(10, 2), nullable=False) # Valor real transacionado
+    preco_momento = Column(Numeric(10, 2), nullable=False) # Valor real transacionado
     data_inicio_prevista = Column(Date, nullable=True)
 
     # RELACIONAMENTOS (SQLAlchemy ORM)
