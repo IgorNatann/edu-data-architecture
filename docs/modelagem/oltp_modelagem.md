@@ -20,10 +20,51 @@ O modelo conceitual mapeia as principais entidades e os relacionamentos do domí
 - Um **Curso** pode estar associado a muitos **Itens de Matrícula** (1:N).
 - Cada **Matrícula** possui um único registro de **Pagamento** (1:1).
 
-```text
-[ALUNO] ──(realiza)──→ [MATRÍCULA] ──(possui)──→ [ITEM MATRÍCULA] ←──(compõe)── [CURSO]
-                            │
-                            └──(gera)──→ [PAGAMENTO]
+```mermaid
+erDiagram
+    ALUNO ||--o{ MATRICULA : realiza
+    MATRICULA ||--o{ ITEM_MATRICULA : possui
+    CURSO ||--o{ ITEM_MATRICULA : compoe
+    MATRICULA ||--|| PAGAMENTO : gera
+
+    ALUNO {
+        int id_aluno PK
+        string nome
+        string email
+        string cpf
+        date data_nascimento
+        date data_cadastro
+    }
+    CURSO {
+        int id_curso PK
+        string nome_curso
+        string descricao
+        decimal preco
+        int carga_horaria
+        date data_criacao
+    }
+    MATRICULA {
+        int id_matricula PK
+        int id_aluno FK
+        date data_matricula
+        string status
+        decimal valor_total
+    }
+    ITEM_MATRICULA {
+        int id_item_matricula PK
+        int id_matricula FK
+        int id_curso FK
+        decimal preco_momento
+        date data_inicio_prevista
+    }
+    PAGAMENTO {
+        int id_pagamento PK
+        int id_matricula FK
+        string forma_pagamento
+        decimal valor_pago
+        date data_pagamento
+        string status_pagamento
+    }
 ```
 
 ## Modelo Lógico
