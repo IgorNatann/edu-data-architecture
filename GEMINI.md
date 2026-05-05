@@ -274,8 +274,8 @@ CREATE TABLE pagamento (
 
 > **⚠️ Atenção IA:** Sempre leia esta seção ao iniciar uma nova sessão e atualize-a ao finalizar uma entrega relevante. Isso garante a continuidade do desenvolvimento.
 
-- **Fase Atual:** Milestone 4 - Schemas de Validação e Transformação (Pydantic)
-- **Última Ação Realizada:** Finalizamos a criação física das tabelas DW no PostgreSQL via script `create_tables.py` (**Issue #5**).
+- **Fase Atual:** Milestone 5 - Geração de Dados (Seed) e Pipeline ETL
+- **Última Ação Realizada:** Finalizamos o Milestone 4 criando os schemas Pydantic para validação OLTP e transformação da Fato (**Issue #6 e #7**).
 - **O que está em aberto (Próximo Passo):**
-  - [ ] **Issue #6 (Milestone 4):** Criar Schemas de Validação OLTP em Pydantic.
+  - [ ] **Issue #8 (Milestone 5):** Script de Geração de Dados (Seed) com Faker.
 - **Aviso:** O gerenciamento do ambiente e dependências é feito via **Poetry**.

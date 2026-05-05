@@ -9,7 +9,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 - [x] **Milestone 1**: Planejamento e Documentação Inicial (PRD, Modelagem, Backlog)
 - [x] **Milestone 2**: Banco de Dados Operacional (OLTP)
 - [x] **Milestone 3**: Banco de Dados Analítico (DW)
-- [ ] **Milestone 4**: Schemas de Validação e Transformação (Pydantic)
+- [x] **Milestone 4**: Schemas de Validação e Transformação (Pydantic)
 - [ ] **Milestone 5**: Geração de Dados (Seed) e Pipeline ETL
 - [ ] **Milestone 6**: Disponibilização de Dados (Camada Semântica)
 
@@ -64,7 +64,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 
 *Foco: Construir a camada de validação e transformação dos dados entre OLTP e DW usando Pydantic.*
 
-- [ ] **Issue #6: Criar Schemas de Validação OLTP**
+- [x] **Issue #6: Criar Schemas de Validação OLTP**
   - Em `schemas/`:
     - `aluno_schema.py`
     - `curso_schema.py`
