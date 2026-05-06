@@ -1,13 +1,9 @@
 [project]
 name = "edu-data-architecture"
-
-[tool.poetry]
-package-mode = false
-
 version = "0.1.0"
 description = "Projeto de arquitetura de dados educacionais com modelagem OLTP e DW e pipeline ETL em Python."
 authors = [
-    {name = "IgorNatann",email = "Igornatan4@gmail.com"}
+    {name = "IgorNatann", email = "Igornatan4@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
@@ -18,6 +14,9 @@ dependencies = [
     "faker (>=40.15.0,<41.0.0)",
     "python-dotenv (>=1.2.2,<2.0.0)"
 ]
+
+[tool.poetry]
+package-mode = false
 
 
 [build-system]

@@ -92,7 +92,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
   - Inserir tudo no schema `oltp`.
   - Gerar a carga da tabela `dim_tempo` para 5 anos (2020-2025).
 
-- [ ] **Issue #9: Pipeline ETL (Extract, Transform, Load)**
+- [x] **Issue #9: Pipeline ETL (Extract, Transform, Load)**
   - Em `etl/load_fato_matricula.py`.
   - **Extract**: Ler as matrículas, alunos e cursos do schema `oltp` usando SQLAlchemy.
   - **Transform**: Passar os dados pelos schemas do Pydantic para validação e cálculo das métricas.

@@ -275,7 +275,7 @@ CREATE TABLE pagamento (
 > **⚠️ Atenção IA:** Sempre leia esta seção ao iniciar uma nova sessão e atualize-a ao finalizar uma entrega relevante. Isso garante a continuidade do desenvolvimento.
 
 - **Fase Atual:** Milestone 5 - Geração de Dados (Seed) e Pipeline ETL
-- **Última Ação Realizada:** Finalizamos a Issue #8 criando o script de Seed (`scripts/seed_data.py`) que popula o schema `oltp` com 50 alunos, 10 cursos, 100 matrículas, 194 itens e 100 pagamentos via Faker (pt_BR), além de gerar a `dim_tempo` no schema `dw` (2.192 registros, 2020-2025).
+- **Última Ação Realizada:** Finalizamos a Issue #9 criando o pipeline ETL (`etl/load_fato_matricula.py`) que extrai dados do schema `oltp` via SQLAlchemy (eager loading), carrega as dimensões `dim_aluno`, `dim_curso` e `dim_status` no schema `dw`, transforma os dados via Pydantic (`FatoMatriculaTransform` / `FatoMatriculaSchema`), e insere na `fato_matricula` com granularidade por **item de matrícula** (1 linha por par matrícula-curso, seguindo Kimball).
 - **O que está em aberto (Próximo Passo):**
-  - [ ] **Issue #9 (Milestone 5):** Pipeline ETL (Extract, Transform, Load) para carregar as dimensões e a fato no DW.
+  - [ ] **Issue #10 (Milestone 5):** Validação Analítica — Queries SQL de sanidade contra o DW para garantir a corretude dos dados inseridos pelo ETL.
 - **Aviso:** O gerenciamento do ambiente e dependências é feito via **Poetry**.
