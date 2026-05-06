@@ -81,7 +81,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 
 *Foco: Popular a base com dados realistas e movimentá-los para a camada analítica.*
 
-- [ ] **Issue #8: Script de Geração de Dados (Seed) com Faker**
+- [x] **Issue #8: Script de Geração de Dados (Seed) com Faker**
   - Em `scripts/seed_data.py`.
   - Usar a biblioteca `Faker` para gerar:
     - 50 Alunos.
