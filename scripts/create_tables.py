@@ -1,3 +1,23 @@
+"""
+Script de Inicializacao do Banco de Dados (DDL)
+
+Responsavel por criar fisicamente os schemas ('oltp' e 'dw') e todas as tabelas
+definidas nos modelos SQLAlchemy do projeto no banco PostgreSQL.
+
+PRE-REQUISITOS:
+    1. Arquivo .env configurado com a variavel DATABASE_URL apontando para o PostgreSQL.
+    2. Dependencias instaladas via Poetry (poetry install).
+    3. Os schemas 'oltp' e 'dw' devem existir previamente no banco
+       (CREATE SCHEMA IF NOT EXISTS oltp; CREATE SCHEMA IF NOT EXISTS dw;).
+
+EXECUCAO:
+    poetry run python scripts/create_tables.py
+
+NOTA DE IDEMPOTENCIA:
+    O metodo 'Base.metadata.create_all()' do SQLAlchemy verifica a existencia das tabelas
+    antes de cria-las. Portanto, executar este script multiplas vezes eh seguro — tabelas
+    ja existentes nao serao recriadas nem terao seus dados apagados.
+"""
 
 import sys
 import os
