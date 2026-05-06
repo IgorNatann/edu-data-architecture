@@ -71,7 +71,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
     - `matricula_schema.py`
   - Incluir regras simples como validação de CPF e tipos corretos.
 
-- [ ] **Issue #7: Criar Schema de Transformação da Fato**
+- [x] **Issue #7: Criar Schema de Transformação da Fato**
   - Em `schemas/fato_matricula_schema.py`.
   - Configurar o modelo que recebe os dados "crus" do OLTP e gera as métricas calculadas (`valor_total`, `qtd_cursos`, etc.) via `@computed_field` ou métodos customizados para carregar a `fato_matricula`.
 
