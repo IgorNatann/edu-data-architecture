@@ -274,8 +274,9 @@ CREATE TABLE pagamento (
 
 > **⚠️ Atenção IA:** Sempre leia esta seção ao iniciar uma nova sessão e atualize-a ao finalizar uma entrega relevante. Isso garante a continuidade do desenvolvimento.
 
-- **Fase Atual:** Milestone 5 - Geração de Dados (Seed) e Pipeline ETL
-- **Última Ação Realizada:** Finalizamos a Issue #9 criando o pipeline ETL (`etl/load_fato_matricula.py`) que extrai dados do schema `oltp` via SQLAlchemy (eager loading), carrega as dimensões `dim_aluno`, `dim_curso` e `dim_status` no schema `dw`, transforma os dados via Pydantic (`FatoMatriculaTransform` / `FatoMatriculaSchema`), e insere na `fato_matricula` com granularidade por **item de matrícula** (1 linha por par matrícula-curso, seguindo Kimball).
-- **O que está em aberto (Próximo Passo):**
-  - [ ] **Issue #10 (Milestone 5):** Validação Analítica — Queries SQL de sanidade contra o DW para garantir a corretude dos dados inseridos pelo ETL.
-- **Aviso:** O gerenciamento do ambiente e dependências é feito via **Poetry**.
+- **Fase Atual:** PROJETO CONCLUIDO - Todos os 6 Milestones entregues
+- **Ultima Acao Realizada:** Finalizamos as Issues #10 e #11, completando o projeto. A Issue #10 criou o script de validacao analitica (`scripts/validate_dw.py`) com 5 categorias de checks (contagem, integridade referencial, consistencia de metricas, distribuicoes e queries uteis) — todas as validacoes passaram. A Issue #11 criou a Camada Semantica com 3 views SQL (`docs/kpis/receita_mensal.sql`, `desempenho_cursos.sql`, `funil_evasao.sql`) e o executor (`scripts/create_views.py`) que instalou as views `dw.vw_receita_mensal`, `dw.vw_desempenho_cursos` e `dw.vw_funil_evasao` no banco.
+- **O que esta em aberto (Proximo Passo):**
+  - [x] Todas as Issues (#1 a #11) foram concluidas.
+  - [x] Todos os Milestones (M1 a M6) foram finalizados.
+- **Aviso:** O gerenciamento do ambiente e dependencias e feito via **Poetry**.

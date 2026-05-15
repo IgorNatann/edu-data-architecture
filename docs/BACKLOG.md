@@ -10,8 +10,8 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 - [x] **Milestone 2**: Banco de Dados Operacional (OLTP)
 - [x] **Milestone 3**: Banco de Dados Analítico (DW)
 - [x] **Milestone 4**: Schemas de Validação e Transformação (Pydantic)
-- [ ] **Milestone 5**: Geração de Dados (Seed) e Pipeline ETL
-- [ ] **Milestone 6**: Disponibilização de Dados (Camada Semântica)
+- [x] **Milestone 5**: Geração de Dados (Seed) e Pipeline ETL
+- [x] **Milestone 6**: Disponibilização de Dados (Camada Semântica)
 
 ---
 
@@ -98,7 +98,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
   - **Transform**: Passar os dados pelos schemas do Pydantic para validação e cálculo das métricas.
   - **Load**: Inserir os registros transformados na `fato_matricula` no schema `dw`.
 
-- [ ] **Issue #10: Validação Analítica**
+- [x] **Issue #10: Validação Analítica**
   - Rodar consultas SQL básicas contra as tabelas do `dw` para garantir a corretude dos dados inseridos pelo ETL.
   - Documentar algumas *queries* úteis (ex: receita por mês).
 
@@ -108,7 +108,7 @@ Este documento organiza o plano de execução do projeto, dividindo o trabalho d
 
 *Foco: Encapsular a complexidade do DW em Views analíticas prontas para o consumo do negócio, respondendo diretamente ao Mini-Case.*
 
-- [ ] **Issue #11: Criar Views Analíticas (KPIs)**
+- [x] **Issue #11: Criar Views Analíticas (KPIs)**
   - Na pasta `docs/kpis/`, armazenar os scripts SQL (`receita_mensal.sql`, `desempenho_cursos.sql`, `funil_evasao.sql`).
   - Executar a criação das `CREATE VIEW vw_...` no schema `dw` para entregar o dado mastigado (Camada Semântica).
 
